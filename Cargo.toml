@@ -1,0 +1,27 @@
+[package]
+name = "idkhtnb"
+version = "0.1.0"
+authors = ["thecntgfy"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+rand = "0.6"
+diesel = { version = "1.4.4", features = ["postgres"] }
+dotenv = "0.15.0"
+uuid = { version = "0.8", features = ["serde", "v4"] }
+ron = "0.6"
+
+[dependencies.serde]
+version = "1.0"
+features = ["derive"]
+
+[dependencies.rocket]
+version = "0.4.6"
+features = ["private-cookies"]
+
+[dependencies.rocket_contrib]
+version = "0.4.6"
+default-features = false
+features = ["json", "serve", "diesel_postgres_pool"]
