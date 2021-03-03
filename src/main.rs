@@ -6,10 +6,7 @@ extern crate rocket;
 #[macro_use]
 extern crate rocket_contrib;
 
-use std::{
-    fs::{DirBuilder, File},
-    path::Path,
-};
+use std::fs::DirBuilder;
 
 use idkhtnb::{
     load_tasks,
@@ -29,7 +26,8 @@ struct DbConn(diesel::PgConnection);
 
 #[get("/")]
 fn index() -> NamedFile {
-    NamedFile::open("server_data/public/index.html").expect("Something messed the path :(")
+    NamedFile::open("server_data/public/index.html")
+        .expect("Can`t open 'server_data/public/index.html'")
 }
 
 #[get("/tasks")]

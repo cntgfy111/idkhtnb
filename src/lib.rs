@@ -1,17 +1,15 @@
 //TODO: &str
 //TODO: Normal api with named fields
 //TODO: clear dir after test except main.lua
-//TODO: isolation of proccess. Now anybody can delete whole server :)
+//TODO: isolation of proccess. Right now anybody can delete whole server :)
 
 #[macro_use]
 extern crate diesel;
 
 use std::{
     fs::File,
-    io::{Seek, Write},
-    path::Path,
+    io::Write,
     process::{Command, Stdio},
-    str::from_utf8,
 };
 
 use diesel::prelude::*;
